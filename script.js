@@ -6,14 +6,18 @@ var introEl = document.querySelector("intro");
 var startGame = document.querySelector("pop-quiz");
 var startBtnEl = document.getElementById("start-button");
 var exitBtnEl = document.getElementById("exit-button");
+var submitBtn = document.getElementById("submit");
 var questionsEl = document.getElementById("questions");
 var choiceBtnEl = document.getElementById("choices");
 var timerEl = document.getElementById("timer");
 var highscoreEl = document.getElementById("highscores");
+var submitEl = document.getElementById("submit");
+var inputEl = document.getElementById("initials")
 
 var endQuiz = false;
 var timer;
 var timerCount;
+var answer = 0;
 var score = 0;
 var scoreCount = 0;
 var answer = "";
@@ -53,48 +57,99 @@ var questions =[
 
 
 // start game----------------------------------------
-function startGame(event) {
-    timer = 60;
-    event.preventDefault();
-    startPageEl.setAttribute();
-    popQuizEl.setAttribute();
-    startBtnEl.disabled = true;
-    startTimer();
-    runGame();
+function startGame(questions) {
+     // If no more questions, end quiz
+ if (current === questions.length || endQuiz) {
+    if (timeLeft > 0) {
+    score = timeLeft;
+    } else {
+    score = 0;
+    }
+    quizOver();
+    return;
+    }
+}
+// questions -------------------------------------------
+function showQuestions() {
+    text = document.createElement('h2');
+     options = document.getElementById('ul');
+     questionEl.textContent = currentQuestion.text;
+     quizEl.appendChild(questionEl);
+     quizEl.appendChild(choicesEl);
 }
 
-function showQuestions(quizContainer) {
-    button,addEventListener("click", selectAnswer);
-    answerButt
-}
-
-// start timer 
+// start timer ---------------------------------------------
 function startTimer() {
     // Sets timer
-    timer = setInterval(function() {
-      timerCount--;
-      timerEl.textContent = timerCount;
-      if (timerCount >= 0) {
-        // Tests if win condition is met
-        if (isWin && timerCount > 0) {
-          // Clears interval and stops timer
-          clearInterval(timer);
-          
-          console.log("works");
-        }
-      }
-      // Tests if time has run out
-      if (timerCount === 0) {
-        // Clears interval
-        clearInterval(timer);
-       
-      }
+    timerEl.textContent = "Time: " + timerCount;
+    setInterval(function () {
+    timerCount--;
+    if (timerCount >= 0) {
+    timerEl.textContent = "Time: " + timerCount;
+    }
+    if (timerCount === 0 || timerCount < 0) {
+    endQuiz = true;
+    if (endQuiz) {
+    quizOver();
+    }
+    clearInterval(timerCount); //
+    }
     }, 1000);
+}
+   
+// answer correct ---------------------------------------
+function answerSelected(event) {
+    if (event.target.matches('button')) {
+    if (event.target.textContent === Questions[answer].correct) {
+    timeLeft += 10;
+    results.textContent = 'Correct!';
+    
+    setTimeout(function () {
+    results.textContent = '';
+    }, 1000);
+    } else {
+// if chose wrong -------------------------------------
+    timeLeft -= 10;
+    results.textContent = 'Wrong!';
+    
+    setTimeout(function () {
+    results.textContent = '';
+    }, 1000);
+    }
+    quizEl.innerHTML = '';
+    current++;
+    runQuiz();
+    }
+//    console.log("works")
    }
 
+
+   // Saves highscore and initials 
+
+    function submitEl() {
+     (localStorage.getItem("score")) 
+        highScores = JSON.parse(localStorage.getItem('score'));
+        }
+        if (inputEl.value) {
+            var initials = inputEl.value;
+            var score = {
+            initials: initials,
+            score: score
+            };
+            highScores.push(score);
+            localStorage.setItem("score", JSON.stringify(scoreCount));
+            location.href = 'highscores.html';
+            } else {
+            alert('You have not entered your initials!');
+            };
+               
+     
+// event listeners ----------------------------------------------
 startBtnEl.addEventListener("click", startGame);
 
-var resetButton = document.querySelector("exit-button");
+popQuizEl.addEventListener("click", ChoiceSlected);
+
+submitBtnEl.addEventListener("click", submit);
 
 function resetGame() {
 }

@@ -100,6 +100,7 @@ button { /*all buttons*/
     font-style: italic;
     justify-content: space-around;
     margin-bottom: 4%;
+    margin-top: 4%;
 }
 button:hover {
     color: var(--buttons);
