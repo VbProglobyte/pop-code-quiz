@@ -1,0 +1,178 @@
+:root {
+    --nav: rgb(120, 131, 116);
+    --background: rgb(20, 43, 60);
+    --buttons: rgb(102, 101, 161);
+    --copy: rgb(214, 213, 216);
+    --accent-copy: rgb(219, 209, 170);
+}
+
+* {
+    box-sizing: border-box;
+    background-color: var(--background);
+    font-family:'Space Grotesk', sans-serif;
+ 
+}
+/* --------------------------------------------------------- */
+
+/* timer & highscores */
+.nav-bar {
+    color: var(--nav);
+    font-weight: bold;
+}
+a:hover{
+    font-style: italic;
+    color: var(--accent-copy);
+}
+
+/* choice btns and quiz container */
+/* .buttons { */
+    /* display: flex; */
+    /* padding: 9%; */
+    /* justify-content: center; */
+/*      */
+/* } */
+#choices {
+    display: grid;
+    margin: 5%;
+    align-items: center;
+}
+
+
+/* headings and text selectors*/
+h1, footer {
+    color: var(--buttons);
+    display: flex;
+    justify-content: center;
+    margin: 10px 10px 20px 20px;
+    font-size: 22px;
+    font-style: oblique;
+    font-weight: bold;
+}
+h2 {
+    display: flex;
+    justify-content: center;
+    margin: 44px;
+    font-size: 88px;
+    line-height: 88px;
+    color: var(--accent-copy);
+    font-style: italic;
+}
+/* line breaks */
+hr {
+    box-sizing: content-box;
+    height: 0;
+    overflow: visible;
+}
+/* embellished fonts */
+em {
+    color: var(--nav);
+}
+
+/* main element - set to center on page */
+.pop-quiz {
+    display: flex;
+    flex-direction: column;
+    margin-left: 24%;
+    margin-right: 24%;
+    margin-top: 4px;
+    line-height: 32px;
+    color: var(--copy);
+    text-align: center;
+}
+/* highscore input */
+.form {
+    background-color: var(--accent-copy);
+    display: flex;
+    flex-direction: column;
+    border-radius: .4em;
+    border: 1px solid transparent;
+}
+
+/* buttons */
+button { /*all buttons*/
+    background-color: var(--buttons);
+    border-radius: .4em;
+    padding: .5em;
+    font-size: 22px;
+    border: 1px solid transparent;
+    text-align: center;
+    color: var(--copy);
+    font-style: italic;
+    justify-content: space-around;
+    margin-bottom: 4%;
+}
+button:hover {
+    color: var(--buttons);
+    background-color: var(--accent-copy);
+    font-style: normal;
+}
+#exit-button {
+    background-color: var(--nav);
+    float: right;   
+}
+#start-button {
+    float: left;
+}
+
+
+
+
+
+/* id elements for the nav (highscores link and time counter */
+#highscores {
+    text-decoration: none;
+    color: var(--buttons);
+    padding: 2%;
+}
+#timer {
+    font-size: 150%;
+    position: absolute;
+    padding: .25%;
+}
+#initials {
+    padding: 2%;
+    color: var(--background);
+    font-style: italic;
+    font-weight: bold;
+}
+/* ------------------------------------------------------------------------------------------------------- */
+.choice-btns { 
+    
+    align-items: center;
+    justify-content: center;
+}
+
+/* ? hides  */
+/* .hidden { */
+    /* display: none; */
+/* } */
+
+
+/*MEDIA VIEWPORTS */
+ /* mobile */
+ @media screen and (max-width: 576px) {
+    * {
+      display: column;
+      text-align: center;
+      font-size:inherit;
+    }
+ }
+ /* tablet*/
+ @media screen and (max-width: 768px) {
+     * {
+       display: column;
+       text-align: center;
+       font-size:inherit;
+     }
+ }
+    
+ /* large screen */
+ @media screen and (max-width: 980px) {
+    * {
+        display: column;
+        text-align: center;
+        font-size:inherit;
+      }
+ 
+ } 
+   

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+<!-- css stylesheet -->
+    <link rel="stylesheet" href="style.css">
+
+<title>POP-Coding-Quiz</title>
+<!-- main landing page -->
+</head>
+<body>
+    <h1>\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\</h1>
+    
+    
+    <!-- NAV with highscores & Timer -->
+        <nav>
+            <section class="nav-bar">
+                <ul>
+<!--id-->                   <a href="highscore.html" id="highscores">Highscores</a>   
+<!--id-->                    <section id="timer">60 <em>seconds</em></section>
+                </ul>
+            </section>
+        </nav>
+    <hr />
+    <!-- INTRO header -->
+        <div class="pop-quiz"> 
+           
+                <h2>Test your knowledge!</h2>
+            
+                <section class= "intro"> <!-- hides
+                <!-- INTRO paragraph -->
+                 <p>This quiz will test your knowledge in code ( <em>specifically javaScript</em> ), but it     is timed. Don't take too long to answer, or the timer will run out and you will have to     start over. <em>What a pity.</em> Answer incorrectly, and the timer will be deducted -10    seconds. <em>What an extreme pity.</em> Try not to worry about the timer though. I have a  feeling you will do great... so grab a cup of <em>java,</em> and let's begin!
+                </p>
+                </section>
+            
+                <section class="buttons">
+                    <!-- question container -- hidden until start-->
+<!--id-->                     <div id="questions" style="display: none;"></div>
+                     
+<!--id-->                         <div id="choices"style="display: none;"> 
+                            <ul>
+                                <button id="choice1" data-number="1">Choice 1</button>
+                                <button id="choice2" data-number="2">Choice 2</button>
+                                <button id="choice3" data-number="3">Choice 3</button>
+                                <button id="choice4" data-number="4">Choice 4</button>
+                            </ul>
+                        </div>
+                
+                    <!-- start button to start the quiz -->
+                
+                    <div class="button">
+                        <div class="hidden"> <!--hides after button pressed-->
+<!--id-->                        <button id="start-button">Start the Quiz</button>
+                        </div>
+                    <!-- exit button to exit the quiz -->
+                    
+<!--id-->                        <button id="exit-button"style="display: none;">Exit Quiz</button>
+                    </div>
+                
+                </section>
+        </div>
+        <hr />
+        
+        
+        <footer>\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\</footer>
+    <!-- js script -->
+    <script src="script.js"></script>
+</body>
+</html>
